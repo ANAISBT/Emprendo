@@ -8,7 +8,7 @@ import LeftSide from "../components/leftSide";
 import ProgressSteps from "../components/ProgressStep"; // Importa el nuevo componente
 import LogoUpload from "../components/LogoUpload";
 
-function Register() {
+function RegisterEmprendedor() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -128,4 +128,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default RegisterEmprendedor;
