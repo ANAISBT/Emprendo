@@ -1,9 +1,9 @@
 .container-fluid {
-    min-height: 100vh; /* 100vh asegura que el contenedor ocupe toda la altura de la ventana */
+   height: 100%; /* 100vh asegura que el contenedor ocupe toda la altura de la ventana */
     font-family: 'Poppins', sans-serif;
 }
 .row {
-    min-height: 100vh; /* 100vh asegura que el contenedor ocupe toda la altura de la ventana */
+    height: 100%;  /* 100vh asegura que el contenedor ocupe toda la altura de la ventana */
 }
 
 /* src/components/Login.css */

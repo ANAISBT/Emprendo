@@ -1,0 +1,30 @@
+.left-side {
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('../../assets/lado\ fondo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .right-side {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 5% !important;
+    align-items: center;
+  }
+
+  form{
+    width: 100%;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  .textIngreso{
+    text-align: center;
+  }
