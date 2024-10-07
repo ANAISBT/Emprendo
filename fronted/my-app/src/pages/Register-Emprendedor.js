@@ -28,7 +28,7 @@ function RegisterEmprendedor() {
     setLogo(event.target.files[0]);
   };
 
-  const handleRegister = async () => {
+  /*const handleRegister = async () => {
     try {
       const userResponse = await registerUsuario(
         name,
@@ -52,6 +52,9 @@ function RegisterEmprendedor() {
     } catch (error) {
       alert(error.message); // Muestra el mensaje de error
     }
+  };*/
+  const handleRegister = async () => {
+    window.location.href = "/EmprendoHome";
   };
 
   const renderStepContent = () => {
