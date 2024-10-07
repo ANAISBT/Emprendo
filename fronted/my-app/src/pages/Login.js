@@ -1,23 +1,34 @@
-// src/components/Login.js
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "../components/Button";
 import FormControl from "../components/FormControl";
-import "./CSS/Login.css"; // Importa el archivo CSS específico
 import LeftSide from "../components/leftSide";
+import { login } from "../services/loginServices"; // Importa el servicio correcto
+import "./CSS/Login.css"; // Importa el archivo CSS específico
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState(""); // Mensaje de éxito
 
-  const handleLogin = () => {
-    // Aquí debes realizar una llamada a tu API de autenticación
-    // y verificar las credenciales del usuario.
-    // Si la autenticación es exitosa, puedes redirigir al usuario a la página de inicio.
+  const handleLogin = async () => {
+    try {
+      const data = await login(email, password); // Llama al servicio de autenticación
+      localStorage.setItem("token", data.token);
+
+      // Aquí podrías redirigir a la página de inicio o dashboard
+      window.location.href = "/EmprendoHome";
+    } catch (error) {
+      setErrorMessage(error.message); // Muestra el error en caso de fallo
+    }
+  };
+  const handleRegister = async () => {
+    window.location.href = "/rolSelect";
   };
 
   return (
-    <Container fluid className="">
+    <Container fluid>
       <Row>
         <Col xs={6} className="left-side">
           <LeftSide />
@@ -25,7 +36,7 @@ function Login() {
         <Col xs={6} className="right-side">
           <h1>Bienvenido</h1>
           <p className="textIngreso">Ingresa sesión a tu cuenta</p>
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <FormControl
               controlId="formBasicEmail"
               type="email"
@@ -42,10 +53,15 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               label="Contraseña"
             />
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {successMessage && (
+              <p className="success-message">{successMessage}</p>
+            )}{" "}
+            {/* Mensaje de éxito */}
             <Button variant="orange" onClick={handleLogin}>
               Iniciar Sesión
             </Button>
-            <Button variant="secondary" onClick={() => alert("Registrarse")}>
+            <Button variant="secondary" onClick={handleRegister}>
               Regístrate
             </Button>
           </form>

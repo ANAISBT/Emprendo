@@ -1,5 +1,6 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
-import "./CSS/Footer.css";
+import "./CSS/Footer2.css";
 
 const Footer = () => {
   return (

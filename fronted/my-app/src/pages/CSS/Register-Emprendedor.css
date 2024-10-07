@@ -10,16 +10,15 @@
   height: 100vh; /* Asegúrate de que ocupe toda la altura de la pantalla */
 }
 
-.right-side {
+/*.right-side {
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-inline: 5% !important;
   align-items: center;
-  height: 100vh; /* Asegúrate de que ocupe toda la altura de la pantalla */
-  margin: 0; /* Evita márgenes que puedan descentrar */
-}
+  height: 100vh;
+  margin: 0; }*/
 
 /* Ajuste de márgenes en títulos */
 h1 {
