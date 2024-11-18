@@ -33,7 +33,7 @@ function Login() {
         <Col xs={6} className="left-side">
           <LeftSide />
         </Col>
-        <Col xs={6} className="right-side">
+        <Col xs={6} className="right-side pInline5">
           <h1>Bienvenido</h1>
           <p className="textIngreso">Ingresa sesión a tu cuenta</p>
           <form onSubmit={(e) => e.preventDefault()}>
